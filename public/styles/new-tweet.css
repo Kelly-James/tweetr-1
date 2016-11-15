@@ -1,0 +1,51 @@
+section.new-tweet {
+  background-color: #f6f6f6;
+  border: 1px solid #c0c0c0;
+  border-radius: 4px;
+  display: block;
+  padding: 0px 20px 20px 20px;
+}
+
+section.new-tweet .textarea {
+  background-color: #fff;
+  border: 1px solid #c0c0c0;
+  border-radius: 2px;
+  display: block;
+  padding: 4px;
+  width: 100%;
+}
+
+section.new-tweet .compose-header {
+  display: block;
+  border-bottom: 1px solid #585959;
+}
+
+
+section.new-tweet .counter {
+  display: block;
+  float: right;
+}
+
+section.new-tweet .tweet-button {
+  display: block;
+  float: left;
+}
+
+section.new-tweet .tweet-lower {
+    display: block;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    width: 100%;
+}
+
+.new-tweet:before,
+.new-tweet:after {
+  content: "";
+  display: table;
+}
+.new-tweet:after {
+  clear: both;
+}
+.new-tweet {
+  clear: both;
+}
