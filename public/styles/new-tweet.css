@@ -3,6 +3,7 @@ section.new-tweet {
   border: 1px solid #c0c0c0;
   border-radius: 4px;
   display: block;
+  margin: 5px 20px 5px 20px;
   padding: 0px 20px 20px 20px;
 }
 
@@ -11,6 +12,7 @@ section.new-tweet .textarea {
   border: 1px solid #c0c0c0;
   border-radius: 2px;
   display: block;
+  height: 64px;
   padding: 4px;
   width: 100%;
 }
@@ -26,26 +28,22 @@ section.new-tweet .counter {
   float: right;
 }
 
+section.new-tweet .counter.max {
+  color: #ff0707;
+}
+
 section.new-tweet .tweet-button {
   display: block;
   float: left;
 }
 
 section.new-tweet .tweet-lower {
-    display: block;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    width: 100%;
+  display: block;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  width: 100%;
 }
 
-.new-tweet:before,
-.new-tweet:after {
-  content: "";
-  display: table;
-}
-.new-tweet:after {
-  clear: both;
-}
-.new-tweet {
+.counter:after {
   clear: both;
 }
