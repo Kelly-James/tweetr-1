@@ -7,6 +7,23 @@ section.new-tweet {
   padding: 0px 20px 20px 20px;
 }
 
+section.new-tweet .bird-compose {
+  background: #f6f6f6;
+  border: none;
+  float: right;
+  height: 25px;
+  right: 10px;
+  top: 0;
+  width: 25px;
+  visibility: hidden;
+}
+
+section.new-tweet:hover .bird-compose {
+  color: #244751;
+  border-width: 1px;
+  visibility: visible;
+}
+
 section.new-tweet .textarea {
   background-color: #fff;
   border: 1px solid #c0c0c0;

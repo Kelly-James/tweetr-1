@@ -47,6 +47,22 @@ article.tweet footer h6 {
   margin: 1px;
 }
 
+article.tweet footer .icons {
+  display: inline-block;
+  float: right;
+}
+
+article.tweet footer i {
+  display: inline-block;
+  padding: 0 4px;
+}
+
+article.tweet footer i:hover {
+  color: #ff0707;
+  display: inline-block;
+  font-style: italic;
+}
+
 article.tweet header img {
   border-radius: 6px;
   display: inline-block;
