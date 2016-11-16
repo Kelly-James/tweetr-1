@@ -4,6 +4,8 @@
  * Reminder: Use (and do all your DOM work in) jQuery's document ready function
  */
 
+$(function() {
+
  var data = [
    {
      "user": {
@@ -51,12 +53,12 @@
    }
  ];
 
-(document).ready(function() {
+
 
   function renderTweets(tweets) {
-    tweets.forEach(tweet) {
-      $('.tweets').prepend(createTweetElement(tweet));
-    }
+    tweets.forEach(function(tweet) {
+      $('section.tweets').prepend(createTweetElement(tweet));
+    });
   }
 
   function createTweetElement(tweet) {
@@ -66,7 +68,29 @@
     var content = tweet.content.text;
     var timeStamp = tweet.created_at;
 
-    var $tweet = $('article').addClass('tweet');
+    var $tweet = $('<article>').addClass('tweet');
+    var $header = $('<header>').addClass('tweet-header');
+    var $footer = $('<footer>').addClass('tweet-footer');
+
+    $header.append($(`<img src="${smallAvatarUrl}">`).addClass('avatar'));
+    $header.append($(`<div>${firstName}</div>`).addClass('user'));
+    $header.append($(`<div>${tag}</div>`).addClass('tag'));
+
+    $tweet.append($header);
+
+    $tweet.append($(`<div><p>${content}</p></div>`).addClass('content'));
+
+    var $div = $('<div>').addClass('icons');
+        ['fa fa-flag', 'fa fa-retweet', 'fa-heart'].forEach(function(icon) {
+        $div.append($(`<i class="fa ${icon}"></i>`));
+      })
+
+    $footer.append($(`<p>${timeStamp}</p>`));
+
+    $footer.append($div);
+
+    $tweet.append($footer);
+
 
     return $tweet;
   }

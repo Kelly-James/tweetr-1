@@ -30,7 +30,7 @@ body {
  main.container {
    background-color: #fff;
    margin: 0 auto;
-   height: 100%;
    margin-top: 80px;
+   overflow: auto;
    width: 450px;
  }

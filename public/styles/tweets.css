@@ -1,19 +1,28 @@
 section.tweets {
+  /*background-color: #f6f6f6;*/
+  /*border: 1px solid #c0c0c0;*/
+  /*border-radius: 4px;*/
+  display: block;
+  height: auto;
+  /*overflow: auto;*/
+  /*margin: 0px 20px;*/
+  }
+
+article.tweet {
   background-color: #f6f6f6;
   border: 1px solid #c0c0c0;
   border-radius: 4px;
   display: block;
-  margin: 0px 20px;
-  /*padding: 20px 20px 20px 20px;*/
+  margin: 0px 20px 5px;
+  overflow: auto;
 }
 
-article.tweet {
+article.tweet:hover {
+  background-color: #e7e7e7;
+  border: 1px solid #f6f6f6;
+  border-radius: 4px;
   display: block;
-  width: 100%;
-}
-
-article.tweet div {
-  height: 60px;
+  margin: 0px 20px 5px;
 }
 
 article.tweet footer {
@@ -21,10 +30,11 @@ article.tweet footer {
   padding: 10px 5px 10px 5px;
 }
 
-article.tweet header {
+article.tweet .tweet-header {
   border-bottom: 1px solid #e4e4e4;
   overflow: auto;
-  padding: 10px 10px;
+  padding: 5px 10px;
+  width: 100%;
 }
 
 article.tweet div.content {
@@ -42,7 +52,7 @@ article.tweet div.content p {
   width: 100%;
 }
 
-article.tweet footer h6 {
+article.tweet footer p {
   display: inline-block;
   margin: 1px;
 }
@@ -71,22 +81,20 @@ article.tweet header img {
   width: 60px;
 }
 
-article.tweet header h2.tweet-header {
+article.tweet header div.user {
   display: inline-block;
   float: left;
   margin: 1px;
   padding: 4px;
 }
 
-article.tweet header h4.tag {
+article.tweet header div.tag {
   display: inline-block;
   float: right;
   margin: 1px;
   padding: 4px
 }
 
-article.tweet header h6 {
-  display: inline-block;
-  float: right;
-  margin: 1px;
+article.tweet header div.tag:after {
+  clear: both;
 }
