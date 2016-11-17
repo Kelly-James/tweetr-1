@@ -1,12 +1,7 @@
 section.tweets {
-  /*background-color: #f6f6f6;*/
-  /*border: 1px solid #c0c0c0;*/
-  /*border-radius: 4px;*/
   display: block;
   height: auto;
-  /*overflow: auto;*/
-  /*margin: 0px 20px;*/
-  }
+}
 
 article.tweet {
   background-color: #f6f6f6;

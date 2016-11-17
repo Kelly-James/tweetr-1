@@ -7,7 +7,11 @@ section.new-tweet {
   padding: 0px 20px 20px 20px;
 }
 
-section.new-tweet .bird-compose {
+section.new-tweet .compose-container {
+  display: none;
+}
+
+section.new-tweet .toggle {
   background: #f6f6f6;
   border: none;
   float: right;
@@ -18,7 +22,7 @@ section.new-tweet .bird-compose {
   visibility: hidden;
 }
 
-section.new-tweet:hover .bird-compose {
+section.new-tweet:hover .toggle {
   color: #244751;
   border-width: 1px;
   visibility: visible;
@@ -56,9 +60,15 @@ section.new-tweet .tweet-button {
 
 section.new-tweet .tweet-lower {
   display: block;
-  padding-bottom: 20px;
-  padding-top: 20px;
+  overflow: auto;
+  padding-top: 16px;
   width: 100%;
+}
+
+section.new-tweet .alerts {
+  color: #ff0707;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 .counter:after {

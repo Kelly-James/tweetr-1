@@ -2,7 +2,6 @@ $(document).ready(function() {
 
   $(function() {
     const $counter = $('.counter');
-    // const $maxError = $('.max-error');
 
     const max = 140;
 
@@ -15,9 +14,6 @@ $(document).ready(function() {
       } else {
         $counter.removeClass('max');
       }
-      // if (len < 140) {
-      //   $maxError.removeClass('active');
-      // }
     }
 
     $('.textarea').on('input', updateCharsLeft);
