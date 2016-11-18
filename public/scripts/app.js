@@ -79,6 +79,7 @@ $(function() {
       });
       $('.compose-container').slideToggle(1000);
       $('.counter').removeClass('max');
+      $('.counter').text('140 Characters Left');
       this.reset();
     }
 
