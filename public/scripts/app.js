@@ -13,17 +13,20 @@ $(function() {
   }
 
   function createTweetElement(tweet) {
-    var firstName = tweet.user.name;
-    var smallAvatarUrl = tweet.user.avatars.small;
-    var tag = tweet.user.handle;
-    var content = tweet.content.text;
-    var timeStamp = tweet.created_at;
+    var firstName       = tweet.user.name;
+    var smallAvatarUrl  = tweet.user.avatars.small;
+    var tag             = tweet.user.handle;
+    var content         = tweet.content.text;
+    var epoch           = tweet.created_at;
+    var newTime         = new Date(epoch);
+    var timeStamp       = moment(newTime).fromNow();
 
-    var $tweet = $('<article>').addClass('tweet');
+    var $tweet  = $('<article>').addClass('tweet');
     var $header = $('<header>').addClass('tweet-header');
     var $footer = $('<footer>').addClass('tweet-footer');
 
-    $header.append($(`<img src="${smallAvatarUrl}">`).addClass('avatar'));
+    $header.append($(`<img
+                    src="${smallAvatarUrl}">`).addClass('avatar'));
     $header.append($(`<div>${firstName}</div>`).addClass('user'));
     $header.append($(`<div>${tag}</div>`).addClass('tag'));
 
@@ -37,6 +40,7 @@ $(function() {
       })
 
     $footer.append($(`<p>${timeStamp}</p>`));
+
 
     $footer.append($div);
 
