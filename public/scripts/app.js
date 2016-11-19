@@ -89,10 +89,15 @@ $(function() {
 
   });
 
-  $('.toggle').click(function() {
+  $('.new-tweet').mouseenter(function() {
     $('.compose-container').slideToggle(1000);
     $('.textarea').select();
   });
+
+  $('.register').click(function() {
+    event.preventDefault();
+    $('#nav-bar p').text('PSYCH!').fadeOut(1000);
+  })
 
   loadTweets();
 

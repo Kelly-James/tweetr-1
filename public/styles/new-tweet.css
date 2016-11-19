@@ -2,30 +2,24 @@ section.new-tweet {
   background-color: #f6f6f6;
   border: 1px solid #c0c0c0;
   border-radius: 4px;
+  box-shadow: 0.25px 0.5px 0.5px #2a2a2a;
   display: block;
   margin: 5px 20px 5px 20px;
   padding: 0px 20px 20px 20px;
+}
+
+section.new-tweet i {
+  float: right;
 }
 
 section.new-tweet .compose-container {
   display: none;
 }
 
-section.new-tweet .toggle {
-  background: #f6f6f6;
-  border: none;
-  float: right;
-  height: 25px;
-  right: 10px;
-  top: 0;
-  width: 25px;
-  visibility: hidden;
-}
-
-section.new-tweet:hover .toggle {
-  color: #244751;
-  border-width: 1px;
-  visibility: visible;
+section.new-tweet .alerts {
+  color: #ff0707;
+  display: inline-block;
+  margin-left: 10px;
 }
 
 section.new-tweet .textarea {
@@ -42,7 +36,6 @@ section.new-tweet .compose-header {
   display: block;
   border-bottom: 1px solid #585959;
 }
-
 
 section.new-tweet .counter {
   display: block;
@@ -63,12 +56,6 @@ section.new-tweet .tweet-lower {
   overflow: auto;
   padding-top: 16px;
   width: 100%;
-}
-
-section.new-tweet .alerts {
-  color: #ff0707;
-  display: inline-block;
-  margin-left: 10px;
 }
 
 .counter:after {

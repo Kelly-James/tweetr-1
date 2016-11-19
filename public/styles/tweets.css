@@ -7,6 +7,7 @@ article.tweet {
   background-color: #f6f6f6;
   border: 1px solid #c0c0c0;
   border-radius: 4px;
+  box-shadow: 0.25px 0.5px 0.5px #2a2a2a;
   display: block;
   margin: 0px 20px 5px;
   overflow: auto;
@@ -16,64 +17,9 @@ article.tweet:hover {
   background-color: #e7e7e7;
   border: 1px solid #f6f6f6;
   border-radius: 4px;
+  box-shadow: 1px 2px 2px #2a2a2a;
   display: block;
   margin: 0px 20px 5px;
-}
-
-article.tweet footer {
-  border-top: 1px solid #e4e4e4;
-  padding: 10px 5px 10px 5px;
-}
-
-article.tweet .tweet-header {
-  border-bottom: 1px solid #e4e4e4;
-  overflow: auto;
-  padding: 5px 10px;
-  width: 100%;
-}
-
-article.tweet div.content {
-  background-color: #fff;
-  border-radius: 2px;
-  display: block;
-  height: 64px;
-  padding: 4px;
-  width: 100%;
-}
-
-article.tweet div.content p {
-  display: inline-block;
-  margin: 1px;
-  width: 100%;
-}
-
-article.tweet footer p {
-  display: inline-block;
-  margin: 1px;
-}
-
-article.tweet footer .icons {
-  display: inline-block;
-  float: right;
-}
-
-article.tweet footer i {
-  display: inline-block;
-  padding: 0 4px;
-}
-
-article.tweet footer i:hover {
-  color: #ff0707;
-  display: inline-block;
-  font-style: italic;
-}
-
-article.tweet header img {
-  border-radius: 6px;
-  display: inline-block;
-  float: left;
-  height: 60px;
-  width: 60px;
 }
 
 article.tweet header div.user {
@@ -88,6 +34,62 @@ article.tweet header div.tag {
   float: right;
   margin: 1px;
   padding: 4px
+}
+
+article.tweet div.content p {
+  display: inline-block;
+  margin: 1px;
+  width: 100%;
+}
+
+article.tweet div.content {
+  background-color: #fff;
+  border-radius: 2px;
+  display: block;
+  height: 64px;
+  padding: 4px;
+  width: 100%;
+}
+
+article.tweet footer p {
+  display: inline-block;
+  margin: 1px;
+}
+
+article.tweet header img {
+  border-radius: 6px;
+  display: inline-block;
+  float: left;
+  height: 60px;
+  width: 60px;
+}
+
+article.tweet footer i {
+  display: inline-block;
+  padding: 0 4px;
+}
+
+article.tweet footer i:hover {
+  color: #ff0707;
+  display: inline-block;
+  font-style: italic;
+}
+
+article.tweet footer {
+  border-top: 1px solid #e4e4e4;
+  padding: 10px 5px 10px 5px;
+}
+
+article.tweet .tweet-header {
+  border-bottom: 1px solid #e4e4e4;
+  overflow: auto;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+article.tweet footer .icons {
+  display: inline-block;
+  float: right;
 }
 
 article.tweet header div.tag:after {

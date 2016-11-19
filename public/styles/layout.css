@@ -29,6 +29,7 @@ body {
 
  main.container {
    background-color: #fff;
+   box-shadow: 0.5px 1px 2px #2a2a2a;
    margin: 0 auto;
    margin-top: 80px;
    overflow: auto;

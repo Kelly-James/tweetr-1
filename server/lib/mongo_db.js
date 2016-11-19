@@ -11,12 +11,10 @@ const mongoConnect = {
         throw err;
       }
       console.log(`Connected to MongoDB: ${MONGODB_URI}`);
-      // console.log('db: ', db)
       mongoConnect.db = db;
       callback(db);
     });
   }
-  // db.close();
 }
 
 
