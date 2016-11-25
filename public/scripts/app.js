@@ -41,46 +41,42 @@ $(function() {
 
     $footer.append($(`<p>${timeStamp}</p>`));
 
-
     $footer.append($div);
 
     $tweet.append($footer);
 
-
     return $tweet;
   }
 
-  function loadTweets() {
-    $.ajax({
-      url: '/tweets',
-      method: 'GET',
-      success: function(data) {
-        renderTweets(data);
-      }
-    });
+  function sendAjax(url, method, data) {
+    return $.ajax({ url: url, method: method, data: data });
   }
+
+  function loadTweets() {
+    return sendAjax('/tweets', 'GET', {})
+  }
+
+  function createTweet(data) {
+    return sendAjax('/tweets', 'POST', data) 
+  }
+
 
   $('.submit-form').on('submit', function(event) {
     event.preventDefault();
-    var formData = $(this).serialize();
+    var formData   = $(this).serialize();
     var tweetInput = $('textarea').val();
+    var alertsEl   = $('.alerts'); 
     if(tweetInput === '') {
-      $('.alerts').text('Cat Got Your Tongue?');
-      $('.alerts').fadeIn(1000);
-      $('.alerts').fadeOut(1000);
+      alertsEl.text('Cat Got Your Tongue?');
+      alertsEl.fadeIn(1000);
+      alertsEl.fadeOut(1000);
     } else if(tweetInput.length > 140) {
-      $('.alerts').text('Too Many Characters!');
-      $('.alerts').fadeIn(1000);
-      $('.alerts').fadeOut(1000);
+      alertsEl.text('Too Many Characters!');
+      alertsEl.fadeIn(1000);
+      alertsEl.fadeOut(1000);
     } else {
-      $.ajax({
-        method: 'POST',
-        url: '/tweets',
-        data: formData,
-        success: function(data) {
-          loadTweets();
-        }
-      });
+      createTweet(formData).then(loadTweets).then(renderTweets)
+
       $('.compose-container').slideToggle(1000);
       $('.counter').removeClass('max');
       $('.counter').text('140 Characters Left');
@@ -89,16 +85,20 @@ $(function() {
 
   });
 
-  $('.new-tweet').mouseenter(function() {
+  // using 'on' can be handy in specifying a scope
+  // when dynamically loading elements that need the handlers
+  // otherwise newly loaded elements might not have working
+  // handlers
+  // you can do stuff like $('.container').on('click', '.el-inside-container', function...
+  $('.new-tweet').on('mouseenter', function() {
     $('.compose-container').slideToggle(1000);
     $('.textarea').select();
   });
 
-  $('.register').click(function() {
-    event.preventDefault();
+  $('.register').on('click', function(e) {
+    e.preventDefault();
     $('#nav-bar p').text('PSYCH!').fadeOut(1000);
-  })
+  });
 
-  loadTweets();
-
+  loadTweets().then(renderTweets);
 });
