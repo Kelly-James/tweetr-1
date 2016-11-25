@@ -2,26 +2,24 @@
 
 const Chance = require("chance");
 const chance = new Chance();
-
-const md5 = require('md5');
+const md5    = require('md5');
 
 module.exports = {
-
   generateRandomUser: () => {
     const gender    = chance.gender();
-    const firstName = chance.first({gender: gender});
+    const firstName = chance.first({ gender });
     const lastName  = chance.last();
-    const userName  = firstName + " " + lastName;
+    const userName  = `${firstName} ${lastName}`;
 
     let userHandle = "@";
     if (Math.random() > 0.5) {
-      let prefix    = chance.prefix({gender: gender});
-      prefix = prefix.replace(".", "");
+      let prefix    = chance.prefix({ gender });
+      prefix        = prefix.replace(".", "");
       userHandle += prefix
     }
-
+   
     userHandle += lastName;
-
+    // can this be combined with above? 
     if (Math.random() > 0.5) {
       const suffix = Math.round(Math.random() * 100);
       userHandle += suffix;
@@ -37,7 +35,7 @@ module.exports = {
     return {
       name: userName,
       handle: userHandle,
-      avatars: avatars
+      avatars
     };
   }
 };
